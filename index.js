@@ -1,9 +1,49 @@
 const bebidas = document.querySelectorAll("input[name='bebidas']");
 const pratos = document.querySelectorAll("input[name='pratos']");
 const sobremesas = document.querySelectorAll("input[name='sobremesas']");
-
 const itemsSelected = []
 
+function addSelection(elementsList, category){
+    elementsList.forEach(element => {
+        element.addEventListener("change", (e)=>{
+            const elementBox = document.querySelectorAll(`label[for=${e.target.id}] > div`)[0]
+            elementBox.classList.add("selected")
+            validateButton(category)
+
+            for(box of elementsList){
+                if(box.id !== e.target.id){
+                    document.querySelectorAll(`label[for=${box.id}] > div`)[0].classList.remove("selected")
+                }
+            }
+        })
+    })
+}
+
+addSelection(bebidas, "bebidas")
+addSelection(pratos, "pratos")
+addSelection(sobremesas, "sobremesas")
+
+function activeButton(){
+    const button = document.querySelector("button")
+    button.classList.add("testButton")
+    button.innerText="Fechar pedido"
+
+    button.addEventListener("click", () => {
+
+    })
+}
+
+function validateButton(item){
+    if(!itemsSelected.includes(item)){
+        itemsSelected.push(item)
+    }
+
+    if(itemsSelected.length === 3){
+        activeButton()
+    }
+}
+
+/*
 bebidas.forEach(bebida => {
     bebida.addEventListener('change', (e) => {
         const bebidaBox = document.querySelectorAll(`label[for=${e.target.id}] > div`)[0]
@@ -109,22 +149,4 @@ sobremesas.forEach(sobremesa => {
     })
 })
 
-function activeButton(){
-    const button = document.querySelector("button")
-    button.classList.add("testButton")
-    button.innerText="Fechar pedido"
-
-    button.addEventListener("click", () => {
-
-    })
-}
-
-function validateButton(item){
-    if(!itemsSelected.includes(item)){
-        itemsSelected.push(item)
-    }
-
-    if(itemsSelected.length === 3){
-        activeButton()
-    }
-}
+*/
