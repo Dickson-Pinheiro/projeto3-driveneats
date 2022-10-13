@@ -14,12 +14,12 @@ const menu = {
             price: 14.90
         },
         prato2: {
-            name: "Frango Yin Yang",
-            price: 14.90
+            name: "Bife a milanesa",
+            price: 32.90
         },
         prato3: {
-            name: "Frango Yin Yang",
-            price: 14.90
+            name: "Bife a parmegiana",
+            price: 47.80
         }
     },
     bebidas: {
@@ -28,12 +28,12 @@ const menu = {
             price: 4.90
         },
         bebida2: {
-            name: "Coquinha gelada",
-            price: 4.90
+            name: "Laranja com morango",
+            price: 15.00
         },
         bebida3: {
-            name: "Coquinha gelada",
-            price: 4.90
+            name: "Guaraná Antárctica",
+            price: 5.60
         }
     },
     sobremesas: {
@@ -42,12 +42,12 @@ const menu = {
             price: 7.90
         },
         sobremesa2: {
-            name: "Pudim",
-            price: 7.90
+            name: "Bolo de Cenoura",
+            price: 5.20
         },
         sobremesa3: {
-            name: "Pudim",
-            price: 7.90
+            name: "torta de morango",
+            price: 16.90
         }
     }
 }
@@ -106,10 +106,10 @@ function activeModal(mensagem){
     const total = document.querySelectorAll(".total p:last-child")[0]
     const itensSelecionados = document.querySelectorAll(".modal .selectedItem")
 
-        itensSelecionados[0].innerHTML = `<p>${menu.pratos[categoriesSelected.prato].name}</p><p>${menu.pratos[categoriesSelected.prato].price}</p>`
-        itensSelecionados[1].innerHTML = `<p>${menu.bebidas[categoriesSelected.bebida].name}</p><p>${menu.bebidas[categoriesSelected.bebida].price}</p>`
-        itensSelecionados[2].innerHTML = `<p>${menu.sobremesas[categoriesSelected.sobremesa].name}</p><p>${menu.sobremesas[categoriesSelected.sobremesa].price}</p>`
-        total.innerHTML = `<p>${(menu.sobremesas[categoriesSelected.sobremesa].price+menu.bebidas[categoriesSelected.bebida].price+menu.pratos[categoriesSelected.prato].price).toFixed(2)}</p>`
+        itensSelecionados[0].innerHTML = `<p>${menu.pratos[categoriesSelected.prato].name}</p><p>${menu.pratos[categoriesSelected.prato].price.toFixed(2)}</p>`
+        itensSelecionados[1].innerHTML = `<p>${menu.bebidas[categoriesSelected.bebida].name}</p><p>${menu.bebidas[categoriesSelected.bebida].price.toFixed(2)}</p>`
+        itensSelecionados[2].innerHTML = `<p>${menu.sobremesas[categoriesSelected.sobremesa].name}</p><p>${menu.sobremesas[categoriesSelected.sobremesa].price.toFixed(2)}</p>`
+        total.innerHTML = `<p>R&dollar; ${(menu.sobremesas[categoriesSelected.sobremesa].price+menu.bebidas[categoriesSelected.bebida].price+menu.pratos[categoriesSelected.prato].price).toFixed(2)}</p>`
         modal.classList.add("activeModal")
 
         buttonOk.addEventListener("click", ()=>{

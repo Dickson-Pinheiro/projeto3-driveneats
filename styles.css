@@ -72,9 +72,14 @@ article h1 {
     display: none;
   }
 
+
 .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     width: 172px;
+    height: 208px;
     padding: 18px 14px 13px 14px;
     background-color: #ffffff;
     border-radius: 9px;
