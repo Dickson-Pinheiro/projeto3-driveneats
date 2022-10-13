@@ -10,7 +10,7 @@ h1 {
     font-family: 'Righteous', cursive;
 }
 
-h2, p {
+h2, p, button {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -167,6 +167,92 @@ article h1 {
     font-size: 20px;
     line-height: 23px;
 }
+
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.activeModal {
+    display: flex;
+}
+
+.center {
+    width: 377px;
+    padding: 21px 26px 0 25px;
+    background-color: #50D074;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.center h1 {
+    font-weight: 700;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 26px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.center .selectedItems {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 13px;
+}
+
+ .selectedItems .selectedItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+ }
+
+ .center .total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 24px;
+ }
+
+ .buttonsConfirm {
+    display: flex;
+    flex-direction: column;
+ }
+
+ .buttonsConfirm button {
+    width: 100%;
+    height: 52px;
+    border-radius: 100px;
+    color: #50D074;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    border: none;
+    cursor: pointer;
+ }
+
+ .buttonsConfirm button:last-child {
+    background-color: #50D074;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 1px;
+ }
 
 @media  (min-width: 614px) {
     header {
